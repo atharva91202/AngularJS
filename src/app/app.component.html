@@ -1,10 +1,19 @@
-<img 
-  [src]="imagePath" 
-  alt="Logo" 
-  style="width: 850px; height: auto; cursor: pointer;" 
-  (click)="openBridgeLabz()"
-/>
-<input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
+<div class="container">
+    <!-- Logo with Click Event -->
+    <img 
+      [src]="imagePath" 
+      alt="Logo" 
+      style="width: 850px; height: auto; cursor: pointer;" 
+      (click)="openBridgeLabz()" 
+    />
 
+    <!-- Input field with Two-Way Data Binding -->
+    <input type="text" [(ngModel)]="userName" (input)="validateUserName()" placeholder="Enter your name" />
 
-<h2>Hello from BridgeLabz, {{ userName }}!</h2>
+    <!-- Hello Message if no error -->
+    <h1 *ngIf="!errorMessage && userName">Hello from BridgeLabz, {{ userName }}!</h1>
+
+    <!-- Error message -->
+    <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+</div>
+
