@@ -9,4 +9,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
  imagePath = 'assets/Logo.png';
+ openBridgeLabz() {
+  window.open('https://www.bridgelabz.com', '_blank');
+}
 }
